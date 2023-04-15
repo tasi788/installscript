@@ -6,7 +6,7 @@ apt update && apt install curl zsh git -y
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # install antigen
-curl -L git.io/antigen > $ZSH/plugins/antigen.zsh
+curl -L git.io/antigen > "$ZSH/plugins/antigen.zsh"
 
 echo "source $ZSH/plugins/antigen.zsh" >> ~/.zshrc
 
