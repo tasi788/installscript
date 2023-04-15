@@ -1,0 +1,22 @@
+#!/usr/bin
+
+# only for apt distro
+
+apt update && apt install curl zsh git -y
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# install antigen
+curl -L git.io/antigen > $ZSH/plugins/antigen.zsh
+
+echo "source $ZSH/plugins/antigen.zsh" >> ~/.zshrc
+
+echo "antigen bundle git
+antigen bundle command-not-found
+antigen bundle extract
+antigen bundle z
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-autosuggestions
+
+antigen theme romkatv/powerlevel10k
+
+antigen apply" >> ~/.zshrc
